@@ -11,6 +11,7 @@
     `cd vmaf-1.5.3/libvmaf`
     
     `meson build --buildtype release`
+   
     `meson -Denable_cuda=true build --buildtype release` for CUDA
     
     `ninja -vC build`
