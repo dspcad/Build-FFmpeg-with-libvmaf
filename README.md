@@ -11,12 +11,13 @@
     `cd vmaf-1.5.3/libvmaf`
     
     `meson build --buildtype release`
+    `meson -Denable_cuda=true build --buildtype release` for CUDA
     
     `ninja -vC build`
     
     `ninja -vC build install`
-4. Get latest FFmpeg soruce from [here](https://ffmpeg.org/download.html).
-5. Build and install ffmpeg with libvamf using following commands:
+5. Get latest FFmpeg soruce from [here](https://ffmpeg.org/download.html).
+6. Build and install ffmpeg with libvamf using following commands:
     
     `./configure --enable-gpl --enable-libx264 --enable-libx265 --enable-nonfree --enable-libvmaf --enable-version3`
     
@@ -25,6 +26,6 @@
     `sudo make install`
     
     `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib`
-6. To build ffmpeg with Nvidia-Cuda support use following command:
+7. To build ffmpeg with Nvidia-Cuda support use following command:
     
     `./configure --enable-gpl --enable-gnutls --enable-demuxer=dash --enable-libxml2 --enable-librsvg --enable-libaom --enable-libass --enable-libfdk-aac --enable-libmp3lame --enable-libfreetype --enable-libvorbis --enable-libopus --enable-libvpx --enable-libx264 --enable-libx265 --enable-nonfree --enable-libvmaf --enable-version3 --enable-cuda-nvcc --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --nvccflags='-gencode arch=compute_61,code=sm_61'`
